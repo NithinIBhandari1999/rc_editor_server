@@ -1,4 +1,5 @@
 const envKeys = {
+    CUSTOM_ENV: process.env.CUSTOM_ENV,
     mongoURI: process.env.mongoURI,
     jwtSectetKeyValue: process.env.jwtSectetKeyValue,
     NODE_ENV: '',

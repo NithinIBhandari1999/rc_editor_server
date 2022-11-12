@@ -3,7 +3,14 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
+const envKeys = require('./src/config/envKeys');
+
 const connectDB = require('./src/config/db');
+
+let PORT = 8080;
+if( envKeys.CUSTOM_ENV === 'prod' ) {
+    PORT = 443;
+}
 
 const app = express();
 
@@ -66,6 +73,6 @@ app.get('/', async (req, res) => {
 
 app.use('/api', routes);
 
-server.listen(8080, () => {
-    console.log('Listen on port http://localhost:8080');
+server.listen(PORT, () => {
+    console.log(`Listen on port http://localhost:${PORT}`);
 });
