@@ -9,7 +9,10 @@ const connectDB = require('./src/config/db');
 
 let PORT = 8080;
 if( envKeys.CUSTOM_ENV === 'prod' ) {
-    PORT = 443;
+    console.log({
+        PORT: process.env.PORT
+    });
+    PORT = process.env.PORT;
 }
 
 const app = express();
