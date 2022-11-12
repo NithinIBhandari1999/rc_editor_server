@@ -36,6 +36,7 @@ app.use(function (req, res, next) {
     var origin = req.get('origin');
 
     console.log({
+        req,
         origin,
     });
 
