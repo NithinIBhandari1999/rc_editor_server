@@ -3,7 +3,7 @@ const envKeys = {
     mongoURI: process.env.mongoURI,
     jwtSectetKeyValue: process.env.jwtSectetKeyValue,
     NODE_ENV: '',
-    BACKEND_URL: '',
+    BACKEND_URL: process.env.BACKEND_URL,
 
     IMAGEKIT_PUBLICKEY: '',
     IMAGEKIT_PRIVATEKEY: '',

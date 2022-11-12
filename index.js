@@ -33,12 +33,16 @@ app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
 
-    var origin = req.get('origin');
+    let origin = req.get('origin');
 
     console.log({
         req,
         origin,
     });
+    
+    if(!origin) {
+        origin = envKeys.BACKEND_URL;
+    }
 
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', origin);
