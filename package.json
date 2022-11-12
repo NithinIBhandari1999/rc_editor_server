@@ -1,0 +1,34 @@
+{
+    "name": "rc_editor_server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.20.1",
+        "buffer": "^6.0.3",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "express-validator": "^6.14.2",
+        "firebase": "^9.13.0",
+        "firebase-admin": "^11.2.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.7.1",
+        "request-ip": "^3.3.0",
+        "response-format": "^1.2.0",
+        "socket.io": "^4.5.3",
+        "validator": "^13.7.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.26.0",
+        "nodemon": "^2.0.20"
+    }
+}
