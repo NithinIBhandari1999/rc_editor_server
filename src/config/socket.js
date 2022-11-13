@@ -14,8 +14,11 @@ const init = (server) => {
         ];
 
         if(envKeys.CUSTOM_ENV === 'prod'){
-            allowedDomains.push(envKeys.BACKEND_URL);
+            allowedDomains.push(envKeys.FRONTEND_URL);
+            allowedDomains.push(`https://${envKeys.FRONTEND_URL}`);
         }
+
+        console.log(allowedDomains);
 
         const io = new Server(server, {
             cors: {
