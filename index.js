@@ -9,9 +9,6 @@ const connectDB = require('./src/config/db');
 
 let PORT = 8080;
 if( envKeys.CUSTOM_ENV === 'prod' ) {
-    console.log({
-        PORT: process.env.PORT
-    });
     PORT = process.env.PORT;
 }
 
@@ -34,11 +31,6 @@ app.use(bodyParser.json());
 app.use(function (req, res, next) {
 
     let origin = req.get('origin');
-
-    console.log({
-        req,
-        origin,
-    });
     
     if(!origin) {
         origin = envKeys.BACKEND_URL;

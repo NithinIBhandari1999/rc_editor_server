@@ -28,8 +28,6 @@ const getAuthState = async (userType, userInfo) => {
 const getUserInfo = async (userToken) => {
     try {
         const userInfo = await getAuth().verifyIdToken(userToken);
-        console.log(userInfo);
-
 
         if (userInfo.firebase.sign_in_provider !== 'google.com') {
             return null;

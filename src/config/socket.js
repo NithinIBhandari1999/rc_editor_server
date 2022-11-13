@@ -4,14 +4,22 @@ const constantSocketActions = require('../constant/constantSocket/constantSocket
 
 const userList = {};
 
+const envKeys = require('./envKeys');
+
 const init = (server) => {
     try {
+        let allowedDomains = [
+            'http://localhost:3000',
+            'localhost:3000'
+        ];
+
+        if(envKeys.CUSTOM_ENV === 'prod'){
+            allowedDomains.push(envKeys.BACKEND_URL);
+        }
+
         const io = new Server(server, {
             cors: {
-                origin: [
-                    'http://localhost:3000',
-                    'localhost:3000'
-                ],
+                origin: allowedDomains,
                 allowedHeaders: ['Set-Cookie'],
                 credentials: true
             }
